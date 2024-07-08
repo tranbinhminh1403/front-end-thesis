@@ -1,0 +1,57 @@
+.header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-left .app-name {
+    color: white;
+    text-decoration: none;
+    font-size: 3em;
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+  }
+  
+  /* .search-input {
+    padding: 5px;
+    margin-right: 10px;
+  } */
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 768px) {
+    .header-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .header-right {
+      width: 100%;
+      justify-content: space-between;
+    }
+  
+    /* .search-input {
+      width: calc(100% - 20px);
+      margin: 10px 0;
+    } */
+  }
+  

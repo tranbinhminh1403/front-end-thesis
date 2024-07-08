@@ -1,0 +1,70 @@
+.comparison-page {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .select-products {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .select-products div {
+    margin: 0 10px;
+    gap: 5%;
+  }
+  
+  .select-products .select-select {
+    max-width: 100%; /* Ensure the select box doesn't exceed the container width */
+    width: 50%; /* Set a reasonable width */
+    /* overflow: hidden; */
+  }
+  
+  .comparison-container {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+  }
+  
+  .product-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 41%;
+    text-align: left;
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .product-card h3 {
+    margin: 10px 0;
+  }
+  
+  .product-card p {
+    margin: 5px 0;
+  }
+  
+  .chart-history {
+    max-width: 80%;
+    margin: auto;
+  }
+
+  .no-selection-box {
+    border-radius: 1%;
+    width: 95%;
+    margin: auto;
+    height: 500px; /* Adjust height as needed */
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+  }
+  
+  .no-selection-text {
+    color: #333;
+    font-weight: bold;
+  }

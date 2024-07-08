@@ -23,7 +23,7 @@ const Wishlist = () => {
   useEffect(() => {
     const fetchWishlist = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/api/v1/wishlist/user/${userId}`, {
+        const response = await axios.get(`/wishlist/user/${userId}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -43,7 +43,7 @@ const Wishlist = () => {
 
   const removeProductFromWishlist = async (productId) => {
     try {
-      await axios.delete(`http://localhost:8080/api/v1/wishlist/user/${userId}/products/${productId}`, {
+      await axios.delete(`/wishlist/user/${userId}/products/${productId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

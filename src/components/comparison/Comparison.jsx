@@ -17,7 +17,7 @@ const Comparison = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/api/v1/products/list"
+          "/products/list"
         );
         setProducts(response.data.data);
       } catch (error) {

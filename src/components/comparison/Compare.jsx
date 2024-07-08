@@ -26,7 +26,7 @@ const Compare = () => {
   const fetchProduct = async (productId, setProduct) => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/v1/products/${productId}`
+        `/products/${productId}`
       );
       setProduct(response.data);
     } catch (error) {

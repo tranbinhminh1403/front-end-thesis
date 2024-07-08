@@ -40,7 +40,7 @@ const ProductDetails = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/api/v1/products/list"
+          "/products/list"
         );
         setProductsList(response.data.data);
       } catch (error) {
@@ -55,7 +55,7 @@ const ProductDetails = () => {
     const fetchProductDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/v1/products/detail/${id}`
+          `/products/detail/${id}`
         );
         if (response.data.success) {
           setProduct(response.data.data.product);
@@ -76,7 +76,7 @@ const ProductDetails = () => {
 
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/v1/wishlist/user/${userId}`,
+          `/wishlist/user/${userId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -186,7 +186,7 @@ const ProductDetails = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/v1/wishlist/add",
+        "/wishlist/add",
         {
           userId,
           productId,
@@ -218,7 +218,7 @@ const ProductDetails = () => {
 
     try {
       const response = await axios.delete(
-        `http://localhost:8080/api/v1/wishlist/user/${userId}/products/${productId}`,
+        `/wishlist/user/${userId}/products/${productId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

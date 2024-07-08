@@ -33,7 +33,7 @@ const Search = () => {
   const fetchProducts = async () => {
     try {
       console.log("Fetching products with filters:", filters);
-      const response = await axios.get("http://localhost:8080/api/v1/products/search", {
+      const response = await axios.get("/products/search", {
         params: filters,
       });
       // console.log("API response:", response.data);

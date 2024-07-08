@@ -25,7 +25,6 @@ const Register = () => {
         email,
         password
       });
-      alert('Đăng ký thành công');
       // Redirect to login page
       navigate('/login');
     } catch (err) {

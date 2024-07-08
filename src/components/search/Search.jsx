@@ -100,7 +100,16 @@ const Search = () => {
         <div className="checkbox-group">
           <label>
             <input
-              type="checkbox"
+              type="radio"
+              name="shop"
+              value=""
+              onChange={handleFilterChange}
+            />{" "}
+            Tất cả
+          </label>
+          <label>
+            <input
+              type="radio"
               name="shop"
               value="fpt"
               onChange={handleFilterChange}
@@ -109,7 +118,7 @@ const Search = () => {
           </label>
           <label>
             <input
-              type="checkbox"
+              type="radio"
               name="shop"
               value="gearvn"
               onChange={handleFilterChange}
@@ -118,7 +127,7 @@ const Search = () => {
           </label>
           <label>
             <input
-              type="checkbox"
+              type="radio"
               name="shop"
               value="phucanh"
               onChange={handleFilterChange}

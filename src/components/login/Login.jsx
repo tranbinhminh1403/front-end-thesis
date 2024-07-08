@@ -18,7 +18,6 @@ const Login = () => {
       });
       // Save token to local storage
       localStorage.setItem('token', response.data.token);
-      alert('Đăng nhập thành công');
       // Redirect to home page
       navigate('/');
     } catch (err) {

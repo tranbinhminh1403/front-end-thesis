@@ -5,6 +5,7 @@ import HistoryChartCompare from "../line_chart/HistoryChartCompare";
 import Select from "react-select"; // Import react-select
 import { useNavigate } from "react-router-dom";
 import formatSpecs from "../../utils/formatSpecs";
+import { api } from "../../config/api";
 
 const Comparison = () => {
   const [products, setProducts] = useState([]);
@@ -16,7 +17,7 @@ const Comparison = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(
+        const response = await api.get(
           "/products/list"
         );
         setProducts(response.data.data);

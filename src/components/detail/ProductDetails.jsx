@@ -12,6 +12,7 @@ import { Button } from "@mui/material";
 import CompareArrowsIcon from "@mui/icons-material/CompareArrows";
 import formatCPU from "../../utils/formatCPU";
 import formatVGA from "../../utils/formatVGA";
+import { api } from "../../config/api";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -39,7 +40,7 @@ const ProductDetails = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(
+        const response = await api.get(
           "/products/list"
         );
         setProductsList(response.data.data);
@@ -54,7 +55,7 @@ const ProductDetails = () => {
   useEffect(() => {
     const fetchProductDetails = async () => {
       try {
-        const response = await axios.get(
+        const response = await api.get(
           `/products/detail/${id}`
         );
         if (response.data.success) {
@@ -75,7 +76,7 @@ const ProductDetails = () => {
       const userId = getUserIdFromToken(token);
 
       try {
-        const response = await axios.get(
+        const response = await api.get(
           `/wishlist/user/${userId}`,
           {
             headers: {
@@ -185,7 +186,7 @@ const ProductDetails = () => {
     }
 
     try {
-      const response = await axios.post(
+      const response = await api.post(
         "/wishlist/add",
         {
           userId,
@@ -217,7 +218,7 @@ const ProductDetails = () => {
     }
 
     try {
-      const response = await axios.delete(
+      const response = await api.delete(
         `/wishlist/user/${userId}/products/${productId}`,
         {
           headers: {

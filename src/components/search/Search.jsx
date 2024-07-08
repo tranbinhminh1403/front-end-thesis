@@ -6,6 +6,7 @@ import formatPrice from "../../utils/formatPrice";
 import formatName from "../../utils/formatName";
 import formatUppercase from "../../utils/formatUppercase";
 import Pagination from "@mui/material/Pagination";
+import { api } from "../../config/api";
 
 const Search = () => {
   const [products, setProducts] = useState([]);
@@ -33,7 +34,7 @@ const Search = () => {
   const fetchProducts = async () => {
     try {
       console.log("Fetching products with filters:", filters);
-      const response = await axios.get("/products/search", {
+      const response = await api.get("/products/search", {
         params: filters,
       });
       // console.log("API response:", response.data);

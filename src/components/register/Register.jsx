@@ -20,7 +20,7 @@ const Register = () => {
     }
 
     try {
-      await axios.post('/auth/register', {
+      await api.post('/auth/register', {
         username,
         email,
         password

@@ -3,6 +3,7 @@ import axios from 'axios';
 import formatUrl from '../../utils/formatUrl';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
+import { api } from '../../config/api';
 
 const Wishlist = () => {
   const [wishlist, setWishlist] = useState([]);
@@ -23,7 +24,7 @@ const Wishlist = () => {
   useEffect(() => {
     const fetchWishlist = async () => {
       try {
-        const response = await axios.get(`/wishlist/user/${userId}`, {
+        const response = await api.get(`/wishlist/user/${userId}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -43,7 +44,7 @@ const Wishlist = () => {
 
   const removeProductFromWishlist = async (productId) => {
     try {
-      await axios.delete(`/wishlist/user/${userId}/products/${productId}`, {
+      await api.delete(`/wishlist/user/${userId}/products/${productId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

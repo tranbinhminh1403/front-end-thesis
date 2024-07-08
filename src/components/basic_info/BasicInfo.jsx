@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { TextField, Button, Container, Typography, Box, Alert } from '@mui/material';
+import { api } from '../../config/api';
 
 const BasicInfo = () => {
   const [userInfo, setUserInfo] = useState({});
@@ -18,11 +19,7 @@ const BasicInfo = () => {
     // Fetch user info
     const fetchUserInfo = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/v1/auth/get-user', {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        });
+        const response = await api.get('/auth/get-user');
         setUserInfo(response.data.data);
       } catch (error) {
         console.error('Error fetching user info:', error);
@@ -46,13 +43,9 @@ const BasicInfo = () => {
 
   const handleEmailChange = async () => {
     try {
-      await axios.post('http://localhost:8080/api/v1/auth/update-info', {
+      await axios.post('/auth/update-info', {
         userId: userId,
         email: newEmail
-      }, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
       });
       setUserInfo(prev => ({ ...prev, email: newEmail }));
       setShowEmailInput(false);
@@ -67,13 +60,9 @@ const BasicInfo = () => {
       return;
     }
     try {
-      await axios.post('http://localhost:8080/api/v1/auth/update-info', {
+      await axios.post('/auth/update-info', {
         userId: userId,
         newPassword: newPassword
-      }, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
       });
       setNewPassword('');
       setConfirmNewPassword('');
